@@ -11,8 +11,7 @@ import Headers from './headers';
 import Request, { getNodeRequestOptions } from './request';
 import FetchError from './fetch-error';
 
-const http = require('http');
-const https = require('https');
+const http2 = require('http2');
 const { PassThrough } = require('stream');
 const { resolve: resolve_url } = require('url');
 const zlib = require('zlib');
@@ -39,7 +38,7 @@ export default function fetch(url, opts) {
 		const request = new Request(url, opts);
 		const options = getNodeRequestOptions(request);
 
-		const send = (options.protocol === 'https:' ? https : http).request;
+		const send = http2.request;
 
 		// http.request only support string as host header, this hack make custom host header possible
 		if (options.headers.host) {

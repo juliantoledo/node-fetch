@@ -153,9 +153,6 @@ export function getNodeRequestOptions(request) {
 	if (request.compress) {
 		headers.set('Accept-Encoding', 'gzip,deflate');
 	}
-	if (!headers.has('Connection') && !request.agent) {
-		headers.set('Connection', 'close');
-	}
 
 	// HTTP-network fetch step 4
 	// chunked encoding is handled by Node.js

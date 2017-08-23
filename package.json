@@ -1,6 +1,6 @@
 {
-  "name": "node-fetch",
-  "version": "2.0.0-alpha.8",
+  "name": "node-fetch-http2",
+  "version": "2.0.0-alpha.8c",
   "description": "A light-weight module that brings window.fetch to node.js",
   "main": "lib/index.js",
   "browser": "./browser.js",
@@ -55,5 +55,7 @@
     "url-search-params": "^0.9.0",
     "whatwg-url": "^5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "http2": "^3.3.6"
+  }
 }
